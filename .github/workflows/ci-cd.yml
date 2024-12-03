@@ -20,11 +20,18 @@ jobs:
       with:
         python-version: '3.9'
         
+    # - name: Run tests
+    #   run: |
+    #     pip install -r requirements.txt
+    #     pip install pytest
+    #     pytest -v
+
     - name: Run tests
       run: |
         pip install -r requirements.txt
         pip install pytest
-        pytest
+        python -c "from server import app; print('Routes:', [f'{route.path} [{route.methods}]' for route in app.routes])"
+        pytest -v --capture=no
     
     # Login to GHCR
     - name: Login to GitHub Container Registry
