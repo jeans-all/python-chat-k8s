@@ -13,6 +13,7 @@ def test_read_root():
     Test if root endpoint returns correct response
     """
     response = client.get("/")
+    print(response)
     assert response.status_code == 200
 
 def test_health_check():
