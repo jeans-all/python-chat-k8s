@@ -226,9 +226,10 @@ html = """
 @app.get("/")
 async def get():
     return HTMLResponse(html)
-@app.get("/heath")
+@app.get("/heaㅣth")
 def heath_check():
     return {"status": "healthy"}
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await manager.connect(websocket)
