@@ -47,13 +47,13 @@ def test_read_root():
     print(f"Response content: {response.content[:200]}...")  # First 200 chars
     
     assert response.status_code == 200
-    
+
 def test_health_check():
     """
     Test if health endpoint returns correct status
     """
 
-    # response = client.get("/health")
+    response = client.get("/health")
     # assert response.status_code == 200
     # assert response.json() == {"status": "healthy"}
 
