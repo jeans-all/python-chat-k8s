@@ -226,7 +226,7 @@ html = """
 @app.get("/")
 async def get():
     return HTMLResponse(html)
-@app.get("/heaㅣth")
+@app.get("/health")
 def heath_check():
     return {"status": "healthy"}
 
